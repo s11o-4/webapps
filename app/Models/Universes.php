@@ -9,6 +9,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Universes extends Model
 {
+    protected $fillable = [
+        'id',
+        'name',
+        'description',
+        'type'
+    ];
     use HasFactory;
     public function superheroes()
     {

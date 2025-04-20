@@ -19,8 +19,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('genders', App\Http\Controllers\GendersController::class)
-    ->middleware(['auth', 'verified'])
-    ->except(['show']);
+    ->middleware(['auth', 'verified']);
+
+Route::resource('superheroes', App\Http\Controllers\SuperheroesController::class)
+    ->middleware(['auth', 'verified']);
+
+Route::resource('universes', App\Http\Controllers\UniversesController::class)
+    ->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
 Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
