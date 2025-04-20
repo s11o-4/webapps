@@ -9,10 +9,10 @@ use Illuminate\Http\RedirectResponse;
 
 class SuperheroesController extends Controller
 {
-    public function index(): View
+    public function index()
     {
         $superheroes = Superheroes::all();
-        return view('superheroes.index', compact('superheroes'));
+        return response()->json($superheroes);
     }
 
     public function create(): View
@@ -34,9 +34,16 @@ class SuperheroesController extends Controller
         return redirect()->route('superheroes.index')->with('success', 'Superhero created successfully.');
     }
 
-    public function show(Superheroes $superhero): View
+    public function show($id)
     {
-        return view('superheroes.show', compact('superhero'));
+        $superhero = Superheroes::find($id);
+        if (!empty($superhero)) {
+            return response()->json($superhero);
+        }
+        else
+        {
+            return response()->json(['message' => 'Superhero not found'], 404);
+        }
     }
 
 

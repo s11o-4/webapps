@@ -8,10 +8,10 @@ use Illuminate\Http\RedirectResponse;
 
 class UniversesController extends Controller
 {
-     public function index(): View
+     public function index()
     {
         $universes = Universes::all();
-        return view('universes.index', compact('universes'));
+        return response() ->json($universes);
     }
 
     public function create(): View
@@ -31,9 +31,16 @@ class UniversesController extends Controller
         return redirect()->route('universes.index')->with('success', 'universe created successfully.');
     }
 
-    public function show(Universes $universe): View
+    public function show($id)
     {
-        return view('universes.show', compact('universe'));
+        $universe = Universes::find($id);
+        if(!empty($universe)) {
+            return response()->json($universe);
+        }
+        else
+        {
+            return response()->json(['message' => 'Universe not found'], 404);
+        }
     }
 
     public function edit(Universes $universe): View

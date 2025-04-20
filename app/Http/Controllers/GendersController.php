@@ -12,10 +12,10 @@ class GendersController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index()
     {
         $genders = Genders::all();
-        return view('genders.index', compact('genders'));
+        return response()->json($genders);
     }
 
     /**
@@ -41,9 +41,17 @@ class GendersController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Genders $gender): View
+    public function show($id)
     {
-        return view('genders.show', compact('gender'));
+        $gender = Genders::find($id);
+
+        if(!empty($gender)) {
+            return response()->json($gender);
+        }
+
+        else {
+            return response()->json(['message' => 'Superhero not found'], 404);
+        }
     }
 
     /**
