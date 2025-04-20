@@ -16,8 +16,22 @@ class UniversesFactory extends Factory
      */
     public function definition(): array
     {
+        $universeNames = [
+            'Marvel',
+            'DC',
+            'Dark Horse',
+            'Image Comics',
+            'IDW Publishing',
+            'Dynamite Entertainment',
+            'Valiant Comics',
+            'BOOM! Studios',
+            'D.C. Thomson & Co.',
+            'Dynamite Entertainment'
+        ];
         return [
-            //
+            'name' => $this->faker->unique()->randomElement($universeNames),
+            'description' => $this->faker->text(200),
+            'type' => $this->faker->randomElement(['comic', 'movie', 'tv_show']),
         ];
     }
 }
