@@ -31,7 +31,10 @@ class GendersController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        Genders::create($request->all());
+        Genders::create([
+            'id' => $request-> input('id'),
+            'gender' => $request-> input('gender')
+        ]);
         return redirect()->route('genders.index')->with('success', 'Gender created successfully.');
     }
 

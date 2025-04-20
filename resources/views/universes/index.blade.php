@@ -6,7 +6,7 @@
     </head>
 <body class="font-sans antialiased">
     <p class="flex items-center justify-center text-5xl font-extrabold mt-4">
-        universes
+        Universes
         <span class="bg-blue-100 text-blue-800 text-2xl font-semibold
             me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-2">
         Recorded
@@ -15,7 +15,7 @@
     <div class="container flex-col mx-12 items-center justify-center">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end min-w-full pr-6">
             <a class="btn btn-success btn-sm bg-primary" href="{{ route('universes.create') }}">
-            <i class="fa fa-plus"></i>Add New order</a>
+            <i class="fa fa-plus"></i>Add New Universe</a>
         </div>
         <table class="table table-bordered table-striped mt-4">
             <tbody>

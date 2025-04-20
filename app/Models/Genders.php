@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Genders extends Model
 {
+    protected $fillable = [
+        'id',
+        'gender'
+    ];
+
     use HasFactory;
 }

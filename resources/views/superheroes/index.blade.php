@@ -15,7 +15,7 @@
     <div class="container flex-col mx-12 items-center justify-center">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end min-w-full pr-6">
             <a class="btn btn-success btn-sm bg-primary" href="{{ route('superheroes.create') }}">
-            <i class="fa fa-plus"></i>Add New order</a>
+            <i class="fa fa-plus"></i>Add New Superhero</a>
         </div>
         <table class="table table-bordered table-striped mt-4">
             <tbody>
