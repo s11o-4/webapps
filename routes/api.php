@@ -15,3 +15,7 @@ Route::get('/universes/{id}', [App\Http\Controllers\UniversesController::class, 
 
 Route::get('/genders', [App\Http\Controllers\GendersController::class, 'index']);
 Route::get('/genders/{id}', [App\Http\Controllers\GendersController::class, 'show']);
+
+Route::get('/files', [App\Http\Controllers\FilesController::class, 'index']);
+Route::get('/files/{id}', [App\Http\Controllers\FilesController::class, 'show']);
+Route::post('/files', [App\Http\Controllers\FilesController::class, 'store']);
